@@ -11,11 +11,12 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    let titles = ["Shrek", "Cinderella", "Poltergeist"]
-    let descriptions = [
+    var titles = ["Shrek", "Cinderella", "Poltergeist"]
+    var descriptions =
+        [
     "Shrek": "Funny",
     "Poltergeist": "Scary"
-    ]
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
