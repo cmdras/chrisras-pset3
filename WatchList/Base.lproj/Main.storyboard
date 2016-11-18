@@ -42,7 +42,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1l-t3-jXg">
                                                     <rect key="frame" x="100" y="18" width="258" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -115,7 +115,6 @@
         <!--Movie Search View Controller-->
         <scene sceneID="d1d-lb-M8c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dmm-nI-c81" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4qW-Zh-rNk" customClass="MovieSearchViewController" customModule="WatchList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RwM-qQ-ld0"/>
@@ -202,13 +201,13 @@
                         <outlet property="yearLabel" destination="1w1-1S-kEQ" id="1ix-W0-bzU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmm-nI-c81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1815.2" y="-647.22638680659679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pow-IX-tE4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HhE-Zq-XIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IKY-A3-32v" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Jx-o7-AMR">
@@ -220,6 +219,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7U7-4H-wcL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HhE-Zq-XIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="-647"/>
         </scene>
