@@ -9,6 +9,8 @@
 import UIKit
 
 class MovieSearchViewController: UIViewController {
+    var moviesList = [Movie]()
+    var movie = Movie()
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -18,11 +20,12 @@ class MovieSearchViewController: UIViewController {
 
     @IBOutlet weak var movieSearchBox: UITextField!
     
+    @IBOutlet weak var addMovieButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,16 +49,23 @@ class MovieSearchViewController: UIViewController {
                         let responseString = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
                         DispatchQueue.main.sync {
                             if responseString["Error"] == nil {
+                                self.addMovieButton.isHidden = false
                                 self.titleLabel.text = responseString["Title"] as? String
+                                self.movie.title = (responseString["Title"] as? String)!
                                 self.titleLabel.isHidden = false
                                 self.yearLabel.text = responseString["Year"] as? String
+                                self.movie.year = (responseString["Year"] as? String)!
                                 self.yearLabel.isHidden = false
                                 self.directorLabel.text = responseString["Director"] as? String
+                                self.movie.director = (responseString["Director"] as? String)!
                                 self.directorLabel.isHidden = false
                                 self.genreLabel.text = responseString["Genre"] as? String
+                                self.movie.genre = (responseString["Genre"] as? String)!
                                 self.genreLabel.isHidden = false
                                 self.descriptionView.text = responseString["Plot"] as? String
+                                self.movie.description = (responseString["Plot"] as? String)!
                                 self.descriptionView.isHidden = false
+                                self.movie.poster = (responseString["Poster"] as? String)!
                                 let posterUrl = URL(string: (responseString["Poster"] as? String)!)
                                 let posterData = try? Data(contentsOf: posterUrl!)
                                 if posterData != nil {
@@ -70,6 +80,7 @@ class MovieSearchViewController: UIViewController {
                                 self.directorLabel.isHidden = true
                                 self.genreLabel.isHidden = true
                                 self.poster.isHidden = true
+                                self.addMovieButton.isHidden = true
                             }
                         }
                     } else {
@@ -83,6 +94,28 @@ class MovieSearchViewController: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var appendMovie = true
+        if segue.identifier == "addMovieSegue" {
+            if let TableVC = segue.destination as? ViewController {
+                if self.moviesList.count == 0{
+                    self.moviesList.append(self.movie)
+                    appendMovie = false
+                }else{
+                    for i in self.moviesList {
+                        if i === self.movie {
+                            appendMovie = false
+                        }
+                    }
+                    if appendMovie {
+                        self.moviesList.append(self.movie)
+                    }
+                }
+                TableVC.movies = moviesList
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

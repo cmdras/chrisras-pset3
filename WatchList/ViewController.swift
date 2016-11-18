@@ -12,28 +12,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView: UITableView!
     var movies = [Movie]()
-    var shrek = Movie()
+    let defaults = UserDefaults.standard
     
-    var titles = ["Shrek", "Cinderella", "Poltergeist"]
-    var descriptions =
-        [
-    "Shrek": "Funny",
-    "Poltergeist": "Scary"
-        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        shrek.title = "Shrek"
-        shrek.director = "Bla BLa"
-        shrek.poster = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTE1NTE0M15BMl5BanBnXkFtZTgwNjY4NTYxMTE@._V1_SX300.jpg"
-        movies.append(shrek)
         self.tableView.reloadData()
+        //print(movies.count)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let SearchVC = segue.destination as? MovieSearchViewController {
+            SearchVC.moviesList = movies
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,13 +45,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.movieDescription.text = movies[indexPath.row].director
         
+        cell.movieYear.text = movies[indexPath.row].year
+        
         let posterUrl = URL(string: movies[indexPath.row].poster)
         let posterData = try? Data(contentsOf: posterUrl!)
-        
-        if let image = UIImage(data: posterData!) {
-            cell.poster.image = image
+        if posterData != nil {
+            if let image = UIImage(data: posterData!) {
+                cell.poster.image = image
+            }
         }
-        
         return cell
     }
 
