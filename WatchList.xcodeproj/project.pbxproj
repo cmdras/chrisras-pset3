@@ -62,8 +62,8 @@
 			children = (
 				836FE9661DDCB1650003B25C /* AppDelegate.swift */,
 				836FE9681DDCB1650003B25C /* ViewController.swift */,
-				836FE96A1DDCB1650003B25C /* Main.storyboard */,
 				833D3D651DDF766F00C82C9C /* MovieSearchViewController.swift */,
+				836FE96A1DDCB1650003B25C /* Main.storyboard */,
 				836FE96D1DDCB1650003B25C /* Assets.xcassets */,
 				836FE96F1DDCB1650003B25C /* LaunchScreen.storyboard */,
 				836FE9721DDCB1650003B25C /* Info.plist */,

@@ -44,7 +44,6 @@ class MovieSearchViewController: UIViewController {
                 if httpStatus?.statusCode == 200 {
                     if data?.count != 0 {
                         let responseString = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
-                        
                         DispatchQueue.main.sync {
                             if responseString["Error"] == nil {
                                 self.titleLabel.text = responseString["Title"] as? String
@@ -71,9 +70,7 @@ class MovieSearchViewController: UIViewController {
                                 self.directorLabel.isHidden = true
                                 self.genreLabel.isHidden = true
                                 self.poster.isHidden = true
-                                
                             }
-                            
                         }
                     } else {
                         print("No data from URL")
@@ -84,8 +81,6 @@ class MovieSearchViewController: UIViewController {
             }
             session.resume()
         }
-
-            
     }
     
 

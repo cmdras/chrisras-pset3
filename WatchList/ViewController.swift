@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         shrek.title = "Shrek"
         shrek.director = "Bla BLa"
+        shrek.poster = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTE1NTE0M15BMl5BanBnXkFtZTgwNjY4NTYxMTE@._V1_SX300.jpg"
         movies.append(shrek)
         self.tableView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,7 +48,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.movieDescription.text = movies[indexPath.row].director
         
-        if let image = UIImage(named: titles[indexPath.row]) {
+        let posterUrl = URL(string: movies[indexPath.row].poster)
+        let posterData = try? Data(contentsOf: posterUrl!)
+        
+        if let image = UIImage(data: posterData!) {
             cell.poster.image = image
         }
         
