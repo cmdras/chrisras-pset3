@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		833D3D661DDF766F00C82C9C /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833D3D651DDF766F00C82C9C /* MovieSearchViewController.swift */; };
 		836FE9671DDCB1650003B25C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836FE9661DDCB1650003B25C /* AppDelegate.swift */; };
 		836FE9691DDCB1650003B25C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836FE9681DDCB1650003B25C /* ViewController.swift */; };
 		836FE96C1DDCB1650003B25C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836FE96A1DDCB1650003B25C /* Main.storyboard */; };
 		836FE96E1DDCB1650003B25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836FE96D1DDCB1650003B25C /* Assets.xcassets */; };
 		836FE9711DDCB1650003B25C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836FE96F1DDCB1650003B25C /* LaunchScreen.storyboard */; };
 		836FE9791DDCB64B0003B25C /* MovieViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836FE9781DDCB64B0003B25C /* MovieViewCell.swift */; };
+		83D55EF81DDE55FA00A23006 /* MovieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D55EF71DDE55FA00A23006 /* MovieClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		833D3D651DDF766F00C82C9C /* MovieSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
 		836FE9631DDCB1650003B25C /* WatchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836FE9661DDCB1650003B25C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		836FE9681DDCB1650003B25C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		836FE9701DDCB1650003B25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		836FE9721DDCB1650003B25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		836FE9781DDCB64B0003B25C /* MovieViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewCell.swift; sourceTree = "<group>"; };
+		83D55EF71DDE55FA00A23006 /* MovieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				836FE9661DDCB1650003B25C /* AppDelegate.swift */,
 				836FE9681DDCB1650003B25C /* ViewController.swift */,
 				836FE96A1DDCB1650003B25C /* Main.storyboard */,
+				833D3D651DDF766F00C82C9C /* MovieSearchViewController.swift */,
 				836FE96D1DDCB1650003B25C /* Assets.xcassets */,
 				836FE96F1DDCB1650003B25C /* LaunchScreen.storyboard */,
 				836FE9721DDCB1650003B25C /* Info.plist */,
 				836FE9781DDCB64B0003B25C /* MovieViewCell.swift */,
+				83D55EF71DDE55FA00A23006 /* MovieClass.swift */,
 			);
 			path = WatchList;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			files = (
 				836FE9691DDCB1650003B25C /* ViewController.swift in Sources */,
 				836FE9671DDCB1650003B25C /* AppDelegate.swift in Sources */,
+				83D55EF81DDE55FA00A23006 /* MovieClass.swift in Sources */,
+				833D3D661DDF766F00C82C9C /* MovieSearchViewController.swift in Sources */,
 				836FE9791DDCB64B0003B25C /* MovieViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +311,7 @@
 				836FE9771DDCB1650003B25C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

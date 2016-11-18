@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZsJ-9f-ImC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movie_cell" id="azA-3y-dhH" customClass="MovieViewCell" customModule="WatchList" customModuleProvider="target">
@@ -86,14 +86,106 @@
                             <constraint firstAttribute="trailing" secondItem="ZsJ-9f-ImC" secondAttribute="trailing" id="h4t-XN-7wr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qBJ-Xe-xp2"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="qBJ-Xe-xp2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Tb-9j-WTb">
+                            <connections>
+                                <segue destination="4qW-Zh-rNk" kind="show" id="Iob-rl-DTB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="ZsJ-9f-ImC" id="Vyk-DC-5Nn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861.60000000000002" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="969" y="-645"/>
+        </scene>
+        <!--Movie Search View Controller-->
+        <scene sceneID="d1d-lb-M8c">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmm-nI-c81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="4qW-Zh-rNk" customClass="MovieSearchViewController" customModule="WatchList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RwM-qQ-ld0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pnj-Bc-oqf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jcg-UV-giy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6U-Ks-Ytf">
+                                <rect key="frame" x="16" y="108" width="140" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-Jp-sZW">
+                                <rect key="frame" x="184" y="140" width="130" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-1S-kEQ">
+                                <rect key="frame" x="184" y="169" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Director" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD1-P8-gza">
+                                <rect key="frame" x="184" y="198" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqN-HM-XV2">
+                                <rect key="frame" x="184" y="227" width="142" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QYQ-Ds-tAa">
+                                <rect key="frame" x="16" y="284" width="343" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAS-8g-ZCg">
+                                <rect key="frame" x="16" y="64" width="285" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzU-cM-K7K">
+                                <rect key="frame" x="308" y="63" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="4qW-Zh-rNk" eventType="touchUpInside" id="d1U-cS-2rS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionView" destination="QYQ-Ds-tAa" id="3sN-D2-lSv"/>
+                        <outlet property="directorLabel" destination="hD1-P8-gza" id="uaf-9y-Sal"/>
+                        <outlet property="genreLabel" destination="MqN-HM-XV2" id="tkR-bk-vED"/>
+                        <outlet property="movieSearchBox" destination="WAS-8g-ZCg" id="slc-Sm-SW8"/>
+                        <outlet property="poster" destination="c6U-Ks-Ytf" id="L24-Q6-yGU"/>
+                        <outlet property="titleLabel" destination="eIM-Jp-sZW" id="IWo-yK-uUA"/>
+                        <outlet property="yearLabel" destination="1w1-1S-kEQ" id="1ix-W0-bzU"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1815.2" y="-647.22638680659679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pow-IX-tE4">
@@ -106,7 +198,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ulk-QY-ASi"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7U7-4H-wcL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhE-Zq-XIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
